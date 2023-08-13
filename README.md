@@ -1,2 +1,2 @@
 # Marvel-Website
-Marvel website clone
+These is the Replication of Marvel Webpage in an interactive and unique way. Hope you will love it .
