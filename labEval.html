@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms in HTML</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: beige;
+        }
+
+        .register {
+            width: 480px;
+            height: 620px;
+            background-color: #fff;
+            margin-top: 3%;
+            margin-left: 33%;
+            bottom: 30px;
+            box-sizing: border-box;
+            border-top: 5px solid #ffc107;
+            padding: 10px 35px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        input {
+            margin-bottom: 20px;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+        }
+
+        input[name="FName"] {
+            width: 33% !important;
+            margin-right: 3%;
+        }
+
+        input[name="LName"] {
+            width: 33% !important;
+        }
+
+        input[name="Country"] {
+            width: 100%;
+            border: 1px solid black;
+            height: 40px;
+            font-size: 16px;
+            padding-left: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            border: 1px solid black;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url(envelope.svg);
+            height: 40px;
+            font-size: 16px;
+            padding-left: 50px;
+            width: 85%;
+        }
+
+        input[type="submit"] {
+            border: none;
+            height: 40px;
+            color: white;
+            background: #ffc107;
+            font-size: 18px;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            cursor: pointer;
+            background: #ffc107;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="register">
+        <h1> Responsive Registration<br>Form</h1> <br>
+        <form action="labEval.php" method="post" name="myForm" onsubmit="return validateForm()">
+            <input type="email" name="Email" placeholder="Email"> <br>
+            <input type="password" name="Password" placeholder="Password"> <br>
+            <input type="password" name="confirmPass" placeholder="Re-type Password"> <br>
+            <input type="text" name="FName" placeholder="First Name">
+            <input type="text" name="LName" placeholder="Last Name"> <br>
+
+            <input type="radio" name="Gender" value="Male"> Male
+            <input type="radio" name="Gender" value="Female"> Female<br>
+
+            <input list="countries" name="Country" placeholder="Select a country">
+            <datalist id="countries">
+                <option value="Australia">
+                <option value="India">
+                <option value="UAE">
+                <option value="UK">
+                <option value="US">
+            </datalist> <br>
+
+            <input type="checkbox"> <label>I agree with terms and conditions</label> <br>
+            <input type="checkbox"> <label>I want to receive the newsletter</label> <br>
+
+            <input type="submit" name="Submit" value="Register">
+        </form>
+    </div>
+    <script>
+
+        function validateForm() {
+            var pass = document.forms['myForm']["Password"].value;
+            var cpass = document.forms['myForm']["confirmPass"].value;
+
+            if (pass != cpass) {
+                document.write("*Password and Confirm password should match!");
+            }
+        }
+    </script>
+</body>
+
+</html>

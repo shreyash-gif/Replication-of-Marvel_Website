@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(234, 113, 248);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .container{
+            width: 70%;
+            height: 150px;
+            background-color: rgb(213, 28, 242);
+            display: flex;
+            justify-content:space-evenly;
+            text-align: center;
+            position: absolute;
+            top: 10%;
+        }
+        .box{
+            width: 15%;
+            height: 100px;
+            position: relative;
+            top: 27px;
+        }
+        .box:hover{
+            cursor: pointer;
+        }
+        #box1{
+            background-color: red;
+            color: red;
+        }
+        #box2{
+            background-color: blue;
+            color: blue;
+        }
+        #box3{
+            background-color: greenyellow;
+            color: greenyellow;
+        }
+        #box4{
+            background-color: cyan;
+            color: cyan;
+        }
+        #box5{
+            background-color: deeppink;
+            color: deeppink;
+        }
+        .circle{
+            width: 70%;
+            height: 450px;
+            position: relative;
+            top: 250px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+        #vartul{
+            width: 50%;
+            height: 380px;
+            border: 1px ;
+            border-radius: 500px;
+            position: relative;
+            top: 8%;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box" id="box1" onmouseenter="changecolor(id)" onmouseleave="exit()">red</div>
+        <div class="box" id="box2" onmouseenter="changecolor(id)" onmouseleave="exit()">blue</div>
+        <div class="box" id="box3" onmouseenter="changecolor(id)" onmouseleave="exit()">greenyellow</div>
+        <div class="box" id="box4" onmouseenter="changecolor(id)" onmouseleave="exit()">cyan</div>
+        <div class="box" id="box5" onmouseenter="changecolor(id)" onmouseleave="exit()">deeppink</div>
+    </div>
+    <div class="circle">
+        <div id="vartul"></div>
+    </div>
+
+    <script>
+
+        function changecolor(id){
+            document.getElementById('vartul').style.background =  document.getElementById(id).innerHTML;
+        }
+
+        function exit() {
+            document.getElementById('vartul').style.background = 'white';
+        }
+    </script>
+</body>
+
+</html>
